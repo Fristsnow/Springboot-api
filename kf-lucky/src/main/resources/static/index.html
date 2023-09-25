@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>kf-lucky</title>
+    <link rel="stylesheet" href="./css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="./css/firstsnow.css" type="text/css">
+    <script src="./lib/jq.js"></script>
+    <script src="./lib/axios.js"></script>
+    <script src="./lib/vue.global.js"></script>
+<!--    <script src="./lib/element-ui.js"></script>-->
+    <script src="./lib/vue-router.global.js"></script>
+    <script>
+        const api = axios.create({
+            baseURL:'http://localhost:8011'
+        })
+    </script>
+</head>
+<body>
+<div id="app">
+    <router-view></router-view>
+</div>
+
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

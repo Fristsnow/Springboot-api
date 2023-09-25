@@ -1,0 +1,8 @@
+.firstsnow-table{
+    width: 100%;
+    height: 100vh;
+}
+.firstsnow-table table td{
+    width: 170px;
+    height: 50px;
+}

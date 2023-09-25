@@ -1,0 +1,45 @@
+server:
+  port: 8011
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: kf-lucky
+  profiles:
+    active: dev
+  jackson:
+    default-property-inclusion: non_null
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  messages:
+    basename: i18n/messages
+    cache-second: 3600
+    encoding: UTF-8
+#日志级别
+logging:
+  level:
+    kf.lucky.main: debug
+#是否开启 swagger-ui
+swagger:
+  enabled: true
+# mybaits-plus配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
+      table-underline: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+#监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

@@ -1,0 +1,193 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+* {
+    box-sizing: border-box;
+}
+
+.button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10000;
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.button .fa {
+    -webkit-transition: color 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: color 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition-delay: .75s;
+    transition-delay: .75s;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    color: #fff;
+    font-family: 'Poiret One', cursive;
+    position: relative;
+    background: crimson;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: -webkit-transform 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: -webkit-transform 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    padding-left: 0;
+    -webkit-transform: translateX(-150%);
+    transform: translateX(-150%);
+    -webkit-transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s;
+}
+
+.content {
+    position: absolute;
+    margin: 0 auto;
+    padding: 30px 20%;
+    font-size: 18px;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: color 1s ease 1s, background 0.5s ease 1s, -webkit-transform 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s;
+    transition: color 1s ease 1s, background 0.5s ease 1s, -webkit-transform 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s;
+    transition: color 1s ease 1s, background 0.5s ease 1s, transform 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s;
+    transition: color 1s ease 1s, background 0.5s ease 1s, transform 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s, -webkit-transform 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+p {
+    margin-bottom: 100px;
+    line-height: 2.4;
+}
+
+ul {
+    margin: 0;
+    padding: 20px 0;
+    list-style: none;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    padding-left: 120px;
+}
+
+a:hover {
+    background: slategrey;
+}
+
+.home_is_visible .home,
+.aboutus_is_visible .aboutus,
+.clients_is_visible .clients,
+.contactus_is_visible .contactus,
+.firstsnow_is_visible .firstsnow {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.home_is_visible .home,
+.aboutus_is_visible .aboutus,
+.clients_is_visible .clients,
+.contactus_is_visible .contactus,
+.firstsnow_is_visible .firstsnow {
+    z-index: 5000;
+}
+
+.home_is_visible .home {
+    color: white;
+    background: cadetblue;
+}
+
+.home_is_visible .button .fa {
+    color: white;
+}
+
+.home_is_visible a {
+    color: white;
+}
+
+.aboutus_is_visible .aboutus {
+    color: black;
+    background: salmon;
+}
+
+.aboutus_is_visible .button .fa {
+    color: black;
+}
+
+.aboutus_is_visible a {
+    color: black;
+}
+
+.clients_is_visible .clients {
+    color: white;
+    background: darkgoldenrod;
+}
+
+.clients_is_visible .button .fa {
+    color: white;
+}
+
+.clients_is_visible a {
+    color: white;
+}
+
+.contactus_is_visible .contactus {
+    color: black;
+    background: sandybrown;
+}
+
+.contactus_is_visible .button .fa {
+    color: black;
+}
+
+.contactus_is_visible a {
+    color: black;
+}
+
+.firstsnow_is_visible .firstsnow {
+    color: black;
+    background: #11d5de;
+}
+
+.firstsnow_is_visible .button .fa {
+    color: black;
+}
+
+.firstsnow_is_visible a {
+    color: black;
+}
+
+body.nav_is_visible {
+    -webkit-transform: translateX(300px);
+    transform: translateX(300px);
+}
+
+body.nav_is_visible .menu {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
