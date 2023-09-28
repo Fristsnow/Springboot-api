@@ -7,10 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="kf-lucky" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="kf-lucky" target="1.8" />
       <module name="kf-mapper" target="1.8" />
     </bytecodeTargetLevel>
   </component>

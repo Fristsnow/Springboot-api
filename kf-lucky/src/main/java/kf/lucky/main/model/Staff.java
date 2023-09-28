@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import sun.security.provider.MD5;
 
+//定义实体类并声明具体的表的结构
 @Data
 @TableName("book")
 public class Staff {

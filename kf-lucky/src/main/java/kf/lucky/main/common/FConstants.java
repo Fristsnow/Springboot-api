@@ -1,5 +1,6 @@
 package kf.lucky.main.common;
 
+//封装回调值
 public interface FConstants {
 
     int SUCCESS = 200;

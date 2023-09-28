@@ -6,3 +6,12 @@
     width: 170px;
     height: 50px;
 }
+.firstsnow-form form{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.firstsnow-form form input{
+    height: 26px;
+    border-radius: 20px;
+}

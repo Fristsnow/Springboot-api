@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements StaffService {
 
+    //具体方法
+    //create
     @Override
     public FResult<String> createStaff(Staff staff) {
         Long staffId = System.currentTimeMillis() / 1000;
@@ -18,7 +20,7 @@ public class StaffServiceImpl extends ServiceImpl<StaffMapper, Staff> implements
         this.save(staff);
         return FResult.ok();
     }
-
+    //update
     @Override
     public FResult<String> updateBook(Staff staff) {
 //        System.out.println(staff);
