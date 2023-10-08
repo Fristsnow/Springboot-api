@@ -1,0 +1,15 @@
+com\fdemo\fdemo\FdemoApplication.class
+com\fdemo\fdemo\model\PageBean.class
+com\fdemo\fdemo\common\Result.class
+com\fdemo\fdemo\conntroller\LoginController.class
+com\fdemo\fdemo\aop\TimeAspect.class
+com\fdemo\fdemo\conntroller\UserController.class
+com\fdemo\fdemo\interceptor\LoginCheckInterceptor.class
+com\fdemo\fdemo\service\UserService.class
+com\fdemo\fdemo\model\User.class
+com\fdemo\fdemo\exception\BaseException.class
+com\fdemo\fdemo\common\JwtUtils.class
+com\fdemo\fdemo\mapper\UserMapper.class
+com\fdemo\fdemo\service\impl\UserServiceImpl.class
+com\fdemo\fdemo\config\WebConfig.class
+com\fdemo\fdemo\filter\FSFilter.class

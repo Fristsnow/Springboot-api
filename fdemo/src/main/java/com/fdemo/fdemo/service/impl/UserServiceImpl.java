@@ -97,4 +97,24 @@ public class UserServiceImpl implements UserService {
     public List<User> listSearch(String name, String email, LocalDate begin, LocalDate end) {
         return userMapper.listSearch(name, email, begin, end);
     }
+
+    /**
+     * 通过id查找员工
+     * @param id
+     * @return
+     */
+    @Override
+    public User listById(Integer id) {
+        return userMapper.listById(id);
+    }
+
+    /**
+     * 用户登录
+     * @param user
+     * @return
+     */
+    @Override
+    public User login(User user) {
+        return userMapper.getEmailAndPassword(user);
+    }
 }

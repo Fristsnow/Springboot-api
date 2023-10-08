@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fdemo.fdemo.mapper.UserMapper">
+    <resultMap id="User" type="com.fdemo.fdemo.model.User">
+        <result column="id" property="id"></result>
+        <result column="name" property="name"></result>
+        <result column="password" property="password"></result>
+        <result column="email" property="email"></result>
+        <result column="birthday" property="birthday"></result>
+    </resultMap>
+    <!--
+     /**
+         * 查询用户
+         *
+         * @return
+         */-->
+    <select id="list" resultType="com.fdemo.fdemo.model.User">
+        <include refid="listCommit"/>
+    </select>
+    <!--
+    /**
+         * 新增用户
+         *
+         * @param user
+         * @return
+         */
+    -->
+    <insert id="insertUser">
+        insert into users(name, password, email, birthday)
+        values (#{name}, #{password}, #{email}, #{birthday})
+    </insert>
+    <!--
+     /**
+         * 修改用户
+         *
+    -->
+    <update id="update">
+        update users
+        <set>
+            <if test="name != null">name = #{name},</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="email != null">email = #{email},</if>
+            <if test="birthday != null">birthday = #{birthday}</if>
+        </set>
+        where id = #{id}
+    </update>
+    <!--
+    /**
+         * 删除用户(单删除)
+         *
+         * @param id
+         * @return
+         */
+    -->
+    <delete id="deleteById">
+        delete
+        from users
+        where id = #{id}
+    </delete>
+    <!--
+        collection: 需要遍历的集合
+        item: 遍历出来的元素
+        separator: 分隔符
+        open: 遍历开始前的sql语句
+        close: 遍历结束后的sql语句
+    -->
+    <!--
+     /**
+         * 批量删除用户
+         *
+         * @param ids
+         * @return
+         */
+    -->
+    <delete id="deleteByIdAll">
+        delete
+        from users
+        where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <!--
+    /**
+         * 统计分页总数据
+         * @return
+         */
+    -->
+    <select id="count" resultType="java.lang.Long">
+        select count(*)
+        from users
+    </select>
+    <!--
+    /**
+         * 分页+模糊搜索
+         *
+         * @param start
+         * @param pageSize
+         * @return
+         */
+    -->
+    <select id="page" resultType="com.fdemo.fdemo.model.User">
+        <include refid="listCommit"/>
+        <where>
+            <if test="name != null and name != ''">name like concat('%',#{name},'%')</if>
+            <if test="email != null and email != ''">and email like concat('%',#{email},'%')</if>
+            <if test="begin != null and end != null">and birthday between #{begin} and #{end}</if>
+        </where>
+        limit #{start},#{pageSize};
+    </select>
+    <!--
+    /**
+         * 模糊搜索
+         *
+         * @param name
+         * @param email
+         * @param begin
+         * @param end
+         * @return
+         */-->
+    <select id="listSearch" resultType="com.fdemo.fdemo.model.User">
+        <include refid="listCommit"/>
+        <where>
+            <if test="name != null and name != ''">name like concat('%', #{name}, '%')</if>
+            <if test="email != null and name != ''">and email like concat('%', #{email}, '%')</if>
+            <if test="begin != null and end != null">and birthday between #{begin} and #{end}</if>
+        </where>
+        order by birthday desc;
+    </select>
+    <!--
+    /**
+         * 通过id查找员工
+         * @param id
+         * @return
+         */
+    -->
+    <select id="listById" resultType="com.fdemo.fdemo.model.User">
+        <include refid="listCommit"/>
+        where id = #{id}
+    </select>
+    <select id="getEmailAndPassword" resultType="com.fdemo.fdemo.model.User">
+        <include refid="listCommit"/>
+        where email = #{email}
+        and password = #{password}
+    </select>
+    <!--
+    公共sql
+    -->
+    <sql id="listCommit">
+        select id,
+               name,
+               password,
+               email,
+               birthday
+        from users
+    </sql>
+</mapper>

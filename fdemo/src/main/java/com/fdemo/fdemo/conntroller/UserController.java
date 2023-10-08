@@ -8,25 +8,34 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 /**
- * <增>
+ * 1，<增>
  * 单增加 (ok)
  * </增>
- * <删>
+ * 2，<删>
  * 单删除 (ok)
  * 批量删除 (ok)
  * </删>
- * <改></改> (ok)
- * <查>
+ * 3，<改></改> (ok)
+ * 4，<查>
  * 全查 (ok)
+ * <新加>
+ * 通过id查找 (ok)
+ * </新加>
  * 部分查（模糊搜索）(ok)
  * 分页查 (ok)
  * </查>
- * <分页></分页> (ok)
+ * 5，<分页></分页> (ok)
+ * 6，文件上传 (ok)
+ * 7，用户验证 (ok)
  */
 @RestController
 @RequestMapping("/user")
@@ -46,6 +55,19 @@ public class UserController {
         log.info("查询用户数据");
         List<User> userList = userService.list();
         return Result.success(userList);
+    }
+
+    /**
+     * 通过id查找员工
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    public Result listById(@PathVariable Integer id) {
+        log.info("通过id查找员工:{}", id);
+        User userId = userService.listById(id);
+        return Result.success(userId);
     }
 
     /**
@@ -82,7 +104,7 @@ public class UserController {
     /**
      * 修改用户
      */
-    @PostMapping("/update")
+    @PutMapping("/update")
     public Result update(@RequestBody User user) {
         log.info("修改用户:{}", user);
         userService.update(user);
@@ -131,5 +153,20 @@ public class UserController {
         log.info("分页查询，参数: {},{},{},{},{},{}", page, pageSize, name, email, begin, end);
         PageBean pageBean = userService.page(page, pageSize, name, email, begin, end);
         return Result.success(pageBean);
+    }
+
+    @PostMapping("/upload")
+    public Result upload(String name, MultipartFile image) throws Exception {
+        log.info("文件上传: {} {}", name, image);
+        // 1, 获取原始文件名
+        String originalFilename = image.getOriginalFilename();
+        // 2, 构造唯一的文件名（不能重复） -- uuid（唯一识别码）
+        int lastIndexOf = originalFilename.lastIndexOf(".");
+        String substring = originalFilename.substring(lastIndexOf);
+        String newFile = UUID.randomUUID().toString() + substring;
+        log.info("新文件的名字: {}", newFile);
+        // 3, 将文件存储在本地
+        image.transferTo(new File("../../../resources/public/storage/" + newFile));
+        return Result.success();
     }
 }

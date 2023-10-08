@@ -64,4 +64,12 @@ public interface UserMapper {
      * @return
      */
     List<User> listSearch(String name, String email, LocalDate begin, LocalDate end);
+    /**
+     * 通过id查找员工
+     * @param id
+     * @return
+     */
+    User listById(Integer id);
+
+    User getEmailAndPassword(User user);
 }

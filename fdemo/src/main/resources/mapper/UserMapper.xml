@@ -129,6 +129,22 @@
         order by birthday desc;
     </select>
     <!--
+    /**
+         * 通过id查找员工
+         * @param id
+         * @return
+         */
+    -->
+    <select id="listById" resultType="com.fdemo.fdemo.model.User">
+        <include refid="listCommit"/>
+        where id = #{id}
+    </select>
+    <select id="getEmailAndPassword" resultType="com.fdemo.fdemo.model.User">
+        <include refid="listCommit"/>
+        where email = #{email}
+        and password = #{password}
+    </select>
+    <!--
     公共sql
     -->
     <sql id="listCommit">

@@ -51,6 +51,23 @@
             <scope>test</scope>
             <version>2.2.2</version>
         </dependency>
+        <!--        jwt-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+        <!--        json-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.79</version>
+        </dependency>
+        <!--    AOP    -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

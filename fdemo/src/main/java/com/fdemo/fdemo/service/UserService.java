@@ -59,4 +59,18 @@ public interface UserService {
      * @return
      */
     List<User> listSearch(String name, String email, LocalDate begin, LocalDate end);
+
+    /**
+     * 通过id查找员工
+     * @param id
+     * @return
+     */
+    User listById(Integer id);
+
+    /**
+     * 用户登录
+     * @param user
+     * @return
+     */
+    User login(User user);
 }

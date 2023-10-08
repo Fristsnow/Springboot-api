@@ -1,7 +1,21 @@
 server:
+  # 端口配置
   port: 9091
 spring:
   profiles:
+    # 服务启动
     active: dev
+  servlet:
+    multipart:
+      # 配置单个文件上传大小的限制
+      max-file-size: 10MB
+      # 配置单个请求最大大小的限制(一次请求中可以上传多个文件)
+      max-request-size: 100MB
 mybatis:
+  # 配置xml的mapper的映射
   mapper-locations: classpath:/mapper/*Mapper.xml
+  configuration:
+    # mybatis输出到控制台
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 驼峰命名的开关 td_user  --> tdUser
+    map-underscore-to-camel-case: true
