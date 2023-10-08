@@ -1,6 +1,6 @@
 # 项目说明
 (注意，该项目只是一个demo，仅供学习，要启动这个项目，请只打开这个kf-lucky的demo，不要全部打开)
-(注意,kf-lucky用的插件是mybatis-plus,fdemo用的是mybatis)
+####(注意,kf-lucky用的插件是mybatis-plus,fdemo用的是mybatis，以下内容为kf-lucky的项目介绍，fdemo的介绍具体看代码，该demo仅供学习)
 ## src.main.java.kf.lucky.main
 1. common
 ~~~ java
