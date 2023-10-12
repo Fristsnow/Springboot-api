@@ -82,6 +82,9 @@
       <recent name="K:\.Firstsnow\apache-maven-3.9.1\fdemo\src\main\resources\com\fdemo\fdemo\mapper" />
       <recent name="K:\.Firstsnow\apache-maven-3.9.1\fdemo\src\main\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.fdemo.fdemo.common" />
+    </key>
   </component>
   <component name="RunManager" selected="Spring Boot.FdemoApplication">
     <configuration name="FdemoApplicationTests.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -124,6 +127,12 @@
       <workItem from="1696668503114" duration="10636000" />
       <workItem from="1696727569015" duration="30957000" />
       <workItem from="1696766136634" duration="275000" />
+      <workItem from="1696829872022" duration="4065000" />
+      <workItem from="1696923752775" duration="8773000" />
+      <workItem from="1697008707901" duration="3762000" />
+      <workItem from="1697094115615" duration="1979000" />
+      <workItem from="1697098778897" duration="2569000" />
+      <workItem from="1697101377404" duration="6891000" />
     </task>
     <servers />
   </component>

@@ -1,9 +1,11 @@
 com\fdemo\fdemo\FdemoApplication.class
+com\fdemo\fdemo\controller\LoginController.class
 com\fdemo\fdemo\model\PageBean.class
+com\fdemo\fdemo\common\CrosFilter.class
+com\fdemo\fdemo\common\ResponseResult.class
 com\fdemo\fdemo\common\Result.class
-com\fdemo\fdemo\conntroller\LoginController.class
 com\fdemo\fdemo\aop\TimeAspect.class
-com\fdemo\fdemo\conntroller\UserController.class
+com\fdemo\fdemo\controller\UserController.class
 com\fdemo\fdemo\interceptor\LoginCheckInterceptor.class
 com\fdemo\fdemo\service\UserService.class
 com\fdemo\fdemo\model\User.class

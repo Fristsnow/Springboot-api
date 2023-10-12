@@ -13,8 +13,12 @@ import lombok.NoArgsConstructor;
 public class Result {
     private Integer code;//code 200 代表成功; 404 代表失败
     private String msg;  //message "success" "not found"
-    private Object data; //date
+    private Object data; //data
 
+    /**
+     * success
+     * @return
+     */
     public static Result success() {
         return new Result(200, "success", null);
     }
